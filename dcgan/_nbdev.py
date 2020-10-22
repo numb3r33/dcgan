@@ -4,9 +4,17 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"InvisibleTensor": "00_data.ipynb",
          "generate_noise": "00_data.ipynb",
-         "get_dls": "00_data.ipynb"}
+         "get_dls": "00_data.ipynb",
+         "build_conv_layer": "01_models.ipynb",
+         "build_bn": "01_models.ipynb",
+         "dcgan_generator": "01_models.ipynb",
+         "build_mnist_gen_arch": "01_models.ipynb",
+         "dcgan_discriminator": "01_models.ipynb",
+         "build_mnist_disc_arch": "01_models.ipynb",
+         "DCGAN": "01_models.ipynb"}
 
-modules = ["data.py"]
+modules = ["data.py",
+           "models.py"]
 
 doc_url = "https://numb3r33.github.io/dcgan/"
 
