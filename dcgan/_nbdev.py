@@ -11,10 +11,14 @@ index = {"InvisibleTensor": "00_data.ipynb",
          "build_mnist_gen_arch": "01_models.ipynb",
          "dcgan_discriminator": "01_models.ipynb",
          "build_mnist_disc_arch": "01_models.ipynb",
-         "DCGAN": "01_models.ipynb"}
+         "DCGAN": "01_models.ipynb",
+         "DCGANLoss": "02_train.ipynb",
+         "DCGANTrainer": "02_train.ipynb",
+         "ShowDCGANImgsCallback": "02_train.ipynb"}
 
 modules = ["data.py",
-           "models.py"]
+           "models.py",
+           "train.py"]
 
 doc_url = "https://numb3r33.github.io/dcgan/"
 
