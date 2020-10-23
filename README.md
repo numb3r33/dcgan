@@ -5,7 +5,7 @@
 DCGAN ( Deep Convolutional Generative Adversarial Networks ) by Alec Radford et al. [paper](https://arxiv.org/abs/1511.06434) provides an improvement over the original GAN [paper](https://arxiv.org/abs/1406.2661) by Ian Goodfellow et al.
 
 
-This project was built with the help of [nbdev](https://nbdev.fast.ai/) and [fastai](https://github.com/fastai/fastai) to highlight the ease of developing sophisticated deep learning models.
+This project was built with the help of [nbdev](https://nbdev.fast.ai/) and [fastai](https://github.com/fastai/fastai) to highlight the ease of developing sophisticated deep learning models. Most of the code is inspired from this [project](https://github.com/tmabraham/UPIT/)
 
 ![sample](images/dcgan_arch.png)
 
