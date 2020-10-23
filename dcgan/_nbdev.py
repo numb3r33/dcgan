@@ -14,7 +14,8 @@ index = {"InvisibleTensor": "00_data.ipynb",
          "DCGAN": "01_models.ipynb",
          "DCGANLoss": "02_train.ipynb",
          "DCGANTrainer": "02_train.ipynb",
-         "ShowDCGANImgsCallback": "02_train.ipynb"}
+         "ShowDCGANImgsCallback": "02_train.ipynb",
+         "dcgan_learner": "02_train.ipynb"}
 
 modules = ["data.py",
            "models.py",

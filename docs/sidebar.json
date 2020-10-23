@@ -1,6 +1,8 @@
 {
-  "nbdev_template": {
+  "dcgan": {
     "Overview": "/",
-    "module name here": "core.html"
+    "DCGAN Data Preparation": "data.html",
+    "DCGAN": "models.html",
+    "DCGAN loss and training loop": "train.html"
   }
 }
