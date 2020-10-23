@@ -1,16 +1,12 @@
 # dcgan
-> DCGAN ( Deep Convolutional Generative Adversarial Networks ) by Alec Radford et al. <a href='https://arxiv.org/abs/1406.2661'>paper](https://arxiv.org/abs/1511.06434) provides an improvement over the original GAN [paper</a> by Ian Goodfellow et al.
 
 
-This file will become your README and also the index of your documentation.
 
 ## Install
 
 `pip install git+https://github.com/numb3r33/dcgan.git`
 
 ## How to use
-
-Fill me in please! Don't forget code examples:
 
 ```
 #ignore
