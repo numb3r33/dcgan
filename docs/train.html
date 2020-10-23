@@ -1046,7 +1046,7 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git diff 02_train.ipynb
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
 </pre></div>
 
     </div>
@@ -1059,77 +1059,108 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-bold">diff --git a/02_train.ipynb b/02_train.ipynb</span>
-<span class="ansi-bold">index b680f5e..ed4e567 100644</span>
-<span class="ansi-bold">--- a/02_train.ipynb</span>
-<span class="ansi-bold">+++ b/02_train.ipynb</span>
-<span class="ansi-cyan-fg">@@ -1250,16 +1250,6 @@</span>
-     &#34;!git status&#34;
-    ]
-   },
-<span class="ansi-red-fg">-  {</span>
-<span class="ansi-red-fg">-   &#34;cell_type&#34;: &#34;code&#34;,</span>
-<span class="ansi-red-fg">-   &#34;execution_count&#34;: null,</span>
-<span class="ansi-red-fg">-   &#34;metadata&#34;: {},</span>
-<span class="ansi-red-fg">-   &#34;outputs&#34;: [],</span>
-<span class="ansi-red-fg">-   &#34;source&#34;: [</span>
-<span class="ansi-red-fg">-    &#34;#hide\n&#34;,</span>
-<span class="ansi-red-fg">-    &#34;!git add *.ipynb; git &#34;</span>
-<span class="ansi-red-fg">-   ]</span>
-<span class="ansi-red-fg">-  },</span>
-   {
-    &#34;cell_type&#34;: &#34;code&#34;,
-    &#34;execution_count&#34;: null,
-<span class="ansi-cyan-fg">@@ -1269,14 +1259,14 @@</span>
-      &#34;name&#34;: &#34;stdout&#34;,
-      &#34;output_type&#34;: &#34;stream&#34;,
-      &#34;text&#34;: [
-<span class="ansi-red-fg">-      &#34;[main 6640ebb] Remove mount file.\n&#34;,</span>
-<span class="ansi-red-fg">-      &#34; 1 file changed, 159 insertions(+), 57 deletions(-)\n&#34;</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34;[main 183e698] Fix tests\n&#34;,</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34; 4 files changed, 45 insertions(+), 299 deletions(-)\n&#34;</span>
-      ]
-     }
-    ],
-    &#34;source&#34;: [
-     &#34;#hide\n&#34;,
-<span class="ansi-red-fg">-    &#34;# !git commit -m &#39;Remove mount file.&#39;&#34;</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">    &#34;!git add *.ipynb docs/; git config --global user.email &#39;abhicoders@gmail.com&#39;; git config --global user.name &#39;numb3r33&#39;; git commit -m &#39;Fix tests&#39;&#34;</span>
-    ]
-   },
-   {
-<span class="ansi-cyan-fg">@@ -1288,20 +1278,20 @@</span>
-      &#34;name&#34;: &#34;stdout&#34;,
-      &#34;output_type&#34;: &#34;stream&#34;,
-      &#34;text&#34;: [
-<span class="ansi-red-fg">-      &#34;Counting objects: 3, done.\n&#34;,</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34;Counting objects: 7, done.\n&#34;,</span>
-       &#34;Delta compression using up to 2 threads.\n&#34;,
-<span class="ansi-red-fg">-      &#34;Compressing objects:  33% (1/3)   \rCompressing objects:  66% (2/3)   \rCompressing objects: 100% (3/3)   \rCompressing objects: 100% (3/3), done.\n&#34;,</span>
-<span class="ansi-red-fg">-      &#34;Writing objects:  33% (1/3)   \rWriting objects:  66% (2/3)   \rWriting objects: 100% (3/3)   \rWriting objects: 100% (3/3), 2.44 KiB | 312.00 KiB/s, done.\n&#34;,</span>
-<span class="ansi-red-fg">-      &#34;Total 3 (delta 2), reused 0 (delta 0)\n&#34;,</span>
-<span class="ansi-red-fg">-      &#34;remote: Resolving deltas: 100% (2/2), completed with 2 local objects.\u001b[K\n&#34;,</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34;Compressing objects:  14% (1/7)   \rCompressing objects:  28% (2/7)   \rCompressing objects:  42% (3/7)   \rCompressing objects:  57% (4/7)   \rCompressing objects:  71% (5/7)   \rCompressing objects:  85% (6/7)   \rCompressing objects: 100% (7/7)   \rCompressing objects: 100% (7/7), done.\n&#34;,</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34;Writing objects:  14% (1/7)   \rWriting objects:  28% (2/7)   \rWriting objects:  42% (3/7)   \rWriting objects:  57% (4/7)   \rWriting objects:  71% (5/7)   \rWriting objects:  85% (6/7)   \rWriting objects: 100% (7/7)   \rWriting objects: 100% (7/7), 1.08 KiB | 1.08 MiB/s, done.\n&#34;,</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34;Total 7 (delta 6), reused 0 (delta 0)\n&#34;,</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34;remote: Resolving deltas: 100% (6/6), completed with 6 local objects.\u001b[K\n&#34;,</span>
-       &#34;To https://github.com/numb3r33/dcgan.git\n&#34;,
-<span class="ansi-red-fg">-      &#34;   6489220..6640ebb  main -&gt; main\n&#34;</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">      &#34;   6640ebb..183e698  main -&gt; main\n&#34;</span>
-      ]
-     }
-    ],
-    &#34;source&#34;: [
-     &#34;#hide\n&#34;,
-<span class="ansi-red-fg">-    &#34;# !git push origin main&#34;</span>
-<span class="ansi-green-fg">+</span><span class="ansi-green-fg">    &#34;!git push origin main&#34;</span>
-    ]
-   },
-   {
+<pre>On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+
+	<span class="ansi-red-fg">modified:   02_train.ipynb</span>
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add *.ipynb docs/<span class="p">;</span> git config --global user.email <span class="s1">&#39;abhicoders@gmail.com&#39;</span><span class="p">;</span> git config --global user.name <span class="s1">&#39;numb3r33&#39;</span><span class="p">;</span> git commit -m <span class="s1">&#39;Fix tests&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[main 183e698] Fix tests
+ 4 files changed, 45 insertions(+), 299 deletions(-)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git push origin main
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.08 KiB | 1.08 MiB/s, done.
+Total 7 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+To https://github.com/numb3r33/dcgan.git
+   6640ebb..183e698  main -&gt; main
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.cli</span> <span class="kn">import</span> <span class="n">nbdev_clean_nbs</span>
+<span class="n">nbdev_clean_nbs</span><span class="p">()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
