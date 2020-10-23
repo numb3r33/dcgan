@@ -1046,6 +1046,190 @@ parameters converted too when you call :meth:<code>to</code>, etc.</p>
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">notebook2script</span>
+<span class="n">notebook2script</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-6b6ccc68348f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#ignore</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">from</span> nbdev<span class="ansi-blue-fg">.</span>export <span class="ansi-green-fg">import</span> notebook2script
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>notebook2script<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/nbdev/export.py</span> in <span class="ansi-cyan-fg">notebook2script</span><span class="ansi-blue-fg">(fname, silent, to_dict)</span>
+<span class="ansi-green-intense-fg ansi-bold">    404</span>     <span class="ansi-green-fg">if</span> os<span class="ansi-blue-fg">.</span>environ<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;IN_TEST&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">return</span>  <span class="ansi-red-fg"># don&#39;t export if running tests</span>
+<span class="ansi-green-intense-fg ansi-bold">    405</span>     <span class="ansi-green-fg">if</span> fname <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 406</span><span class="ansi-red-fg">         </span>reset_nbdev_module<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    407</span>         update_version<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    408</span>         update_baseurl<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/nbdev/export.py</span> in <span class="ansi-cyan-fg">reset_nbdev_module</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">    239</span> <span class="ansi-green-fg">def</span> reset_nbdev_module<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    240</span>     <span class="ansi-blue-fg">&#34;Create a skeletton for &lt;code&gt;_nbdev&lt;/code&gt;&#34;</span>
+<span class="ansi-green-fg">--&gt; 241</span><span class="ansi-red-fg">     </span>fname <span class="ansi-blue-fg">=</span> Config<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>path<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;lib_path&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">/</span><span class="ansi-blue-fg">&#39;_nbdev.py&#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">    242</span>     fname<span class="ansi-blue-fg">.</span>parent<span class="ansi-blue-fg">.</span>mkdir<span class="ansi-blue-fg">(</span>parents<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">,</span> exist_ok<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    243</span>     sep <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;\n&#39;</span><span class="ansi-blue-fg">*</span> <span class="ansi-blue-fg">(</span>int<span class="ansi-blue-fg">(</span>Config<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;cell_spacing&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;1&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">+</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.6/dist-packages/fastcore/foundation.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, cfg_name)</span>
+<span class="ansi-green-intense-fg ansi-bold">    453</span>         <span class="ansi-green-fg">while</span> cfg_path <span class="ansi-blue-fg">!=</span> cfg_path<span class="ansi-blue-fg">.</span>parent <span class="ansi-green-fg">and</span> <span class="ansi-green-fg">not</span> <span class="ansi-blue-fg">(</span>cfg_path<span class="ansi-blue-fg">/</span>cfg_name<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>exists<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> cfg_path <span class="ansi-blue-fg">=</span> cfg_path<span class="ansi-blue-fg">.</span>parent
+<span class="ansi-green-intense-fg ansi-bold">    454</span>         self<span class="ansi-blue-fg">.</span>config_path<span class="ansi-blue-fg">,</span>self<span class="ansi-blue-fg">.</span>config_file <span class="ansi-blue-fg">=</span> cfg_path<span class="ansi-blue-fg">,</span>cfg_path<span class="ansi-blue-fg">/</span>cfg_name
+<span class="ansi-green-fg">--&gt; 455</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">assert</span> self<span class="ansi-blue-fg">.</span>config_file<span class="ansi-blue-fg">.</span>exists<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">f&#34;Could not find {cfg_name}&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    456</span>         self<span class="ansi-blue-fg">.</span>d <span class="ansi-blue-fg">=</span> read_config_file<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>config_file<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;DEFAULT&#39;</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">    457</span>         _add_new_defaults(self.d, self.config_file,
+
+<span class="ansi-red-fg">AssertionError</span>: Could not find settings.ini</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.cli</span> <span class="kn">import</span> <span class="n">nbdev_build_lib</span>
+<span class="n">nbdev_build_lib</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Converted 00_data.ipynb.
+Converted 01_models.ipynb.
+Converted 02_train.ipynb.
+Converted index.ipynb.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.cli</span> <span class="kn">import</span> <span class="n">nbdev_build_docs</span>
+<span class="n">nbdev_build_docs</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>converting: /content/drive/My Drive/Colab Notebooks/github/dcgan/02_train.ipynb
+converting: /content/drive/My Drive/Colab Notebooks/github/dcgan/00_data.ipynb
+converting: /content/drive/My Drive/Colab Notebooks/github/dcgan/01_models.ipynb
+converting /content/drive/My Drive/Colab Notebooks/github/dcgan/index.ipynb to README.md
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.cli</span> <span class="kn">import</span> <span class="n">nbdev_test_nbs</span>
+<span class="n">nbdev_test_nbs</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>testing /content/drive/My Drive/Colab Notebooks/github/dcgan/00_data.ipynb
+testing /content/drive/My Drive/Colab Notebooks/github/dcgan/01_models.ipynb
+testing /content/drive/My Drive/Colab Notebooks/github/dcgan/02_train.ipynb
+testing /content/drive/My Drive/Colab Notebooks/github/dcgan/index.ipynb
+All tests are passing!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
 </pre></div>
 
@@ -1086,7 +1270,7 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add *.ipynb docs/<span class="p">;</span> git config --global user.email <span class="s1">&#39;abhicoders@gmail.com&#39;</span><span class="p">;</span> git config --global user.name <span class="s1">&#39;numb3r33&#39;</span><span class="p">;</span> git commit -m <span class="s1">&#39;Fix tests&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add 02_train.ipynb<span class="p">;</span> git config --global user.email <span class="s1">&#39;abhicoders@gmail.com&#39;</span><span class="p">;</span> git config --global user.name <span class="s1">&#39;numb3r33&#39;</span><span class="p">;</span> git commit -m <span class="s1">&#39;Remove unwanted cells.&#39;</span>
 </pre></div>
 
     </div>
@@ -1099,8 +1283,41 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[main 183e698] Fix tests
- 4 files changed, 45 insertions(+), 299 deletions(-)
+<pre>[main 93e9a21] Remove unwanted cells.
+ 1 file changed, 10 insertions(+), 54 deletions(-)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git pull origin main --no-edit
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
 </pre>
 </div>
 </div>
@@ -1131,14 +1348,14 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Counting objects: 7, done.
+<pre>Counting objects: 3, done.
 Delta compression using up to 2 threads.
-Compressing objects: 100% (7/7), done.
-Writing objects: 100% (7/7), 1.08 KiB | 1.08 MiB/s, done.
-Total 7 (delta 6), reused 0 (delta 0)
-remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 871 bytes | 96.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/numb3r33/dcgan.git
-   6640ebb..183e698  main -&gt; main
+   db4b615..93e9a21  main -&gt; main
 </pre>
 </div>
 </div>

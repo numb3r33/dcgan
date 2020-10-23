@@ -1,13 +1,13 @@
 ---
 
-title: Project name here
+title: dcgan
 
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Summary description here."
-description: "Summary description here."
+summary: "DCGAN ( Deep Convolutional Generative Adversarial Networks ) by Alec Radford et al. <a href='https://arxiv.org/abs/1406.2661'>paper](https://arxiv.org/abs/1511.06434) provides an improvement over the original GAN [paper</a> by Ian Goodfellow et al."
+description: "DCGAN ( Deep Convolutional Generative Adversarial Networks ) by Alec Radford et al. <a href='https://arxiv.org/abs/1406.2661'>paper](https://arxiv.org/abs/1511.06434) provides an improvement over the original GAN [paper</a> by Ian Goodfellow et al."
 nb_path: "index.ipynb"
 ---
 <!--
@@ -44,7 +44,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install your_project_name</code></p>
+<p><code>pip install git+https://github.com/numb3r33/dcgan.git</code></p>
 
 </div>
 </div>
@@ -69,32 +69,88 @@ nb_path: "index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">MNIST</span><span class="p">)</span>
+<span class="n">dls</span>  <span class="o">=</span> <span class="n">get_dls</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
 </div>
+    {% endraw %}
 
-</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dc_gan</span> <span class="o">=</span> <span class="n">DCGAN</span><span class="p">(</span><span class="n">ch_in</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">z_dim</span><span class="o">=</span><span class="mi">64</span>
+               <span class="p">)</span>
+
+<span class="n">learn</span> <span class="o">=</span> <span class="n">dcgan_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">dc_gan</span><span class="p">,</span> <span class="n">opt_func</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">Adam</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">n_epoch</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">2e-4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>How generator learns during various epochs of training.</strong> One can see the quality of images improving over time.</p>
+<p><img src="/dcgan/images/gen_generation.png" alt="generator generation"></p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span><span class="o">.</span><span class="n">show_results</span><span class="p">(</span><span class="n">ds_idx</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Result after training for 75 epochs</strong></p>
+<p><img src="/dcgan/images/final_res.png" alt="Result"></p>
+
+</div>
+</div>
+</div>
 </div>
  
 
